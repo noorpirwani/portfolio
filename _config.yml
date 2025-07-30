@@ -1,0 +1,41 @@
+title: Noor Ahmed Raza Pirwani
+email: noorahmedpirwani@gmail.com
+subtitle: by HTML5 UP
+description: >-
+  Portfolio showcasing UX design, digital fabrication, and STEAM education.
+
+baseurl: "/portfolio"
+url: "https://narp7.github.io"
+author:
+street_address: 1234 Somewhere Road
+city: Nashville
+state: TN
+zip_code: 55555
+country: United States of America
+phone: (716) 555-5555
+
+# homepage tiles
+tiles-source: pages # accepts "posts" or "pages"
+tiles-count: 6
+
+socials:
+  GitHub: https://github.com/narp7
+  GitLab: https://gitlab.fabcloud.org/noorahmedraza.pirwani
+  LinkedIn: https://www.linkedin.com/in/andrew-banchich-a4ba1195
+
+# Build settings
+markdown: kramdown
+theme: null
+plugins:
+  - jekyll-feed
+
+sass:
+  style: compressed
+
+# Exclude folders you don’t want Jekyll to build
+exclude:
+  - CONTRIBUTING.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
