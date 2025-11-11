@@ -1,11 +1,11 @@
 ---
 layout: home
 title: Home
-landing-title: 'Hi, my name is Noor'
+landing-title: 'Creating Human-Centered Digital Experiences'
 description: null
 image: null
 author: null
 show_tile: false
 ---
 
-Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.
+My professional journey reflects a balance of design thinking, hands-on innovation, and global collaboration. I’ve worked on creating user-friendly digital solutions, managed digital fabrication labs, and guided learners worldwide through Fab Academy. Each step has strengthened my ability to solve problems, design meaningful experiences, and build impactful projects.

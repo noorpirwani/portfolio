@@ -1,27 +1,27 @@
 title: Noor Ahmed Raza Pirwani
 email: noorahmedpirwani@gmail.com
-subtitle: by HTML5 UP
+subtitle:  UX Strategist & Digital Fabricator
 description: >-
-  Portfolio showcasing UX design, digital fabrication, and STEAM education.
+  I help teams transform complexity into intuitive, goal-driven experiences. My background in digital fabrication sharpens my ability to think systematically — from concept to execution.
 
 baseurl: "/portfolio"
 url: "https://noorpirwani.github.io"
 author:
-street_address: 1234 Somewhere Road
-city: Nashville
-state: TN
-zip_code: 55555
-country: United States of America
-phone: (716) 555-5555
+street_address:
+city: Karachi
+state: Sindh
+zip_code: 74600
+country: Pakistan
+phone: (+92) 321-2330567
 
 # homepage tiles
 tiles-source: pages # accepts "posts" or "pages"
-tiles-count: 6
+tiles-count: 2
 
 socials:
-  GitHub: https://github.com/narp7
+  GitHub: https://github.com/noorpirwani
   GitLab: https://gitlab.fabcloud.org/noorahmedraza.pirwani
-  LinkedIn: https://www.linkedin.com/in/andrew-banchich-a4ba1195
+  LinkedIn: https://pk.linkedin.com/in/noor-ahmed-pirwani
 
 # Build settings
 markdown: kramdown
@@ -32,6 +32,18 @@ plugins:
 sass:
   style: compressed
 
+# Custom collections
+collections:
+  experience:
+    output: true
+    sort_by: start_date
+  education:
+    output: true
+    sort_by: end_date
+  uxcase:
+    output: true
+    permalink: /work/:name/
+
 # Exclude folders you don’t want Jekyll to build
 exclude:
   - CONTRIBUTING.md
@@ -39,3 +51,12 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
+  - elements.md
+  - generic.md
+  - landing.md
+  - README.md
+  - .DS_Store
+  - _drafts
+  - _posts
+  - 404.md
+  - all_posts.md

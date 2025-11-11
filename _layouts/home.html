@@ -21,7 +21,7 @@
             <div class="content">
                 <p style="text-transform: uppercase;">{{ site.description }}</p>
                 <ul class="actions">
-                    <li><a href="#one" class="button next scrolly">Get Started</a></li>
+                    <li><a href="#work-section" class="button next scrolly">Explore My Work</a></li>
                 </ul>
             </div>
         </div>
@@ -30,22 +30,151 @@
     <!-- Main -->
     <div id="main">
 
-        <!-- One -->
-        {% include tiles.html %}
-
-        <!-- Two -->
-        <section id="two">
+    <!-- =====================================
+    HERO PROJECT - WORK SECTION
+    ====================================== -->
+        <section id="work-section">
             <div class="inner">
                 <header class="major">
-                    <h2>Massa libero</h2>
+                    <h2>Featured Work in UX Strategy & Product Design</h2>
+                    <p class="section-subtitle">
+                        Thoughtful UX projects shaped by strategy and design.
+                    </p>
                 </header>
-                <p>{{ content }}</p>
-                <ul class="actions">
-                    <li><a href="landing.html" class="button next">Get Started</a></li>
-                </ul>
+
+                <!--Loop for "Hero" cards -->
+                <div class="hero-project-wrapper">
+                    {% assign featured_projects = site.uxcase | reverse %}
+                    {% for project in featured_projects %}
+                    <div class="hero-project-card">
+                        <!-- Left Side: Image -->
+                        <div class="hero-project-image">
+                            <a href="{{ project.url | relative_url }}">
+                                <img src="{{ project.image | relative_url }}" alt="{{ project.title }} Cover Image" />
+                            </a>
+                        </div>
+                        <!-- Right Side: Content -->
+                        <div class="hero-project-content">
+                            <h3>{{ project.title }}</h3>
+                            <h4>{{ project.category }}</h4>
+                            <p class="description">{{ project.description }}</p>
+                            <div class="tags">
+                                {% for tag in project.tags %}
+                                <span class="tag">{{ tag }}</span>
+                                {% endfor %}
+                            </div>
+                            <ul class="actions">
+                                <li><a href="{{ project.url | relative_url }}" class="button special">View Case
+                                        Study</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <!-- "Explore All" Button Bar -->
+                <div class="explore-all-bar">
+                    <a href="{{ '/work.html' | relative_url }}" class="button">View Full Portfolio</a>
+                </div>
+
             </div>
+
         </section>
 
+    <!-- =====================================
+     EXPERIENCE SECTION
+     ===================================== -->
+        <section id="experience">
+            <div class="inner">
+                <header class="major">
+                    <div class="header-title">
+                        <h1>Experience & Roles</h1>
+                        <p class="section-subtitle">
+                        Every role added a new layer to how I understand users, teams, and impact.
+                        </p>
+                    </div>
+                    <div class="header-actions">
+                        <a href="#contact" class="button primary scrolly">Let’s add your project to this story</a>
+                    </div>
+                </header>
+
+                <div class="experience-timeline">
+                    {% assign sorted_experience = site.experience | sort: "end_date" | reverse %}
+                    {% for item in sorted_experience %}
+                    <div class="timeline-row">
+                        <div class="timeline-year">
+                            <span class="year">{{ item.years }}</span>
+                        </div>
+                        <div class="timeline-dot">
+                            <div class="dot"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="timeline-card">
+                            <h3>{{ item.role }} — {{ item.organization }}</h3>
+                            <p class="summary">{{ item.description }}</p>
+                            <div class="details">
+                                <div>{{ item.details | markdownify }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div> <!-- End .experience-timeline -->
+
+            </div> <!-- End .inner -->
+        </section>
+
+
+     <!-- ====================================
+     EDUCATION SECTION
+     ====================================== -->
+        <section id="education">
+            <!-- This "inner" div provides the "safe space" padding -->
+            <div class="inner">
+
+                <header class="major">
+                    <div class="header-title">
+                        <h1>Education & Certifications</h1>
+                        <p class="section-subtitle">
+                        Behind every role, theres been a constant pursuit of learning and sharing knowledge.
+                        </p>
+                    </div>
+                    <div class="header-actions">
+                        <a href="assets/docs/CV_Noor Ahmed_Raza_Pirwani.pdf" class="button" target="_blank">Download
+                            CV</a>
+                    </div>
+                </header>
+
+                <div class="education-pillar-grid">
+                    <!-- Pillar 1 -->
+                    {% assign bachelor = site.education | where_exp: "item", "item.role contains 'Engineer'" | first %}
+                    {% if bachelor %}
+                    <div class="education-pillar">
+                        <span class="icon fa-university"></span>
+                        <h3>{{ bachelor.role }}</h3>
+                        <h4>{{ bachelor.organization }}</h4>
+                    </div>
+                    {% endif %}
+                    <!-- Pillar 2 -->
+                    {% assign fab = site.education | where_exp: "item", "item.role contains 'Fabrication'" | first %}
+                    {% if fab %}
+                    <div class="education-pillar">
+                        <span class="icon fa-cogs"></span>
+                        <h3>{{ fab.role }}</h3>
+                        <h4>{{ fab.organization }}</h4>
+                    </div>
+                    {% endif %}
+                    <!-- Pillar 3 -->
+                    {% assign google = site.education | where_exp: "item", "item.role contains 'Google'" | first %}
+                    {% if google %}
+                    <div class="education-pillar">
+                        <span class="icon fa-mouse-pointer"></span>
+                        <h3>{{ google.role }}</h3>
+                        <h4>{{ google.organization }}</h4>
+                    </div>
+                    {% endif %}
+                </div> <!-- End .education-pillar-grid -->
+
+            </div> <!-- End .inner -->
+        </section>
     </div>
 
     {% include footer.html %}

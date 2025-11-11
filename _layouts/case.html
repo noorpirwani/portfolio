@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+
+{% include head.html %}
+
+<body>
+
+  {% include header.html %}
+
+  <!-- Hero Section -->
+  <section class="case-hero" style="background-image: url('{{ page.hero_image | relative_url }}');">
+    <div class="case-hero-overlay"></div>
+
+    <div class="case-hero-content">
+      <h1 class="case-title">{{ page.title }}</h1>
+
+      {% if page.subtitle %}
+      <p class="case-subtitle">{{ page.subtitle }}</p>
+      {% endif %}
+
+      <div class="case-meta">
+        {% if page.year %}
+        <span class="meta-item"><strong>Year:</strong> {{ page.year }}</span>
+        {% endif %}
+        {% if page.role %}
+        <span class="meta-item"><strong>Role:</strong> {{ page.role }}</span>
+        {% endif %}
+        {% if page.category %}
+        <span class="meta-item"><strong>Category:</strong> {{ page.category }}</span>
+        {% endif %}
+      </div>
+
+      {% if page.description %}
+      <p class="case-description">{{ page.description }}</p>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- Case Body (Markdown content) -->
+   <div class="case-body-wrapper">
+  <article class="case-body">
+    {{ content }}
+  </article>
+  </div>
+  </body>
+
+  <!-- Optional Navigation -->
+  <div class="case-nav">
+    {% if page.previous.url %}
+    <a href="{{ page.previous.url | relative_url }}" class="case-nav-link prev">← Previous</a>
+    {% endif %}
+    {% if page.next.url %}
+    <a href="{{ page.next.url | relative_url }}" class="case-nav-link next">Next →</a>
+    {% endif %}
+  </div>
+
+  {% include footer.html %}
+
+
+</body>
+</html>

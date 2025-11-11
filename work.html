@@ -1,0 +1,61 @@
+---
+layout: page
+title:
+description:
+---
+
+<!-- Header -->
+        <section id="work-section">
+            <div class="inner">
+                <header class="major">
+                    <h2>UX Case Studies That Drive Real Impact</h2>
+                    <p class="section-subtitle">
+                        Explore how I’ve approached complex design challenges through research, user testing, and iterative design.
+                    </p>
+                </header>
+            </div>
+        </section>
+
+<!-- This is your original, excellent code.
+We are re-using it for our "All Work" gallery.-->
+<section id="ux-cases">
+    <div class="inner">
+    <div class="case-grid">
+        {% for case in site.uxcase reversed %}
+        <a href="{{ case.url | relative_url }}" class="case-item">
+            <div class="image-wrapper">
+                <img src="{{ case.image | relative_url }}" alt="{{ case.title }}">
+                {% if case.category %}
+                <span class="category-tag">{{ case.category }}</span>
+                {% endif %}
+            </div>
+            <div class="case-content">
+                <h3>{{ case.title }}</h3>
+                {% if case.subtitle %} <!-- Changed from description to subtitle -->
+                <p class="description">{{ case.subtitle }}</p>
+                {% endif %}
+                {% if case.tags %}
+                <div class="tags">
+                    {% for tag in case.tags %}
+                    <span class="tag">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </a>
+        {% endfor %}
+
+        <a href="#" class="case-item" style="opacity: 0.5; pointer-events: none;">
+            <div class="image-wrapper">
+                <img src="https://placehold.co/600x400/2a2f43/444963?text=Coming+Soon" alt="Coming Soon" />
+                <span class="category-tag">UX Research</span>
+            </div>
+            <div class="case-content">
+                <h3>[Case Study Coming Soon]</h3>
+                <p class="description">I'm currently writing up my process for a new client project. Check back soon for the full details!</p>
+            </div>
+        </a>
+
+    </div>
+    </div>
+</section>
