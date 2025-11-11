@@ -1035,7 +1035,7 @@ input[type="reset"] {
 }
 
 /* ===========================================================
-   FINAL "CONTACT" SECTION (v10 - The "Clean Slate" Fix)
+   FINAL "CONTACT" SECTION
    =========================================================== */
 
 /* 1. This styles the main <section> tag */
@@ -1044,7 +1044,6 @@ input[type="reset"] {
   padding: 2em 0;     /* Top/Bottom padding */
   color: #fff;
   overflow: hidden; /* Clear floats and prevent margin collapse */
-  min-height: 100dvh;
 }
 
 /* 2. THIS IS THE FIX: Our very own "safe space" container.
