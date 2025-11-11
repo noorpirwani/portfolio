@@ -1,0 +1,1675 @@
+/* ==============================================
+   CUSTOM STYLES — Noor Ahmed Raza Pirwani
+   For Jekyll Forty Theme (Portfolio)
+   ============================================== */
+
+/* ===========================================================
+   NEW "SPLIT HEADER" for education and experience
+   =========================================================== */
+
+/* This styles the <header> tag for BOTH sections */
+#education header.major,
+#experience header.major {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  
+  /* FIX #3: This removes the extra white line from the theme.
+  */
+  border: none;
+  box-shadow: none;
+  
+  /* FIX #1: This tells the header to be 100% wide *of its parent*
+    (the ".inner" container), which respects your "safe space".
+    My old "max-content" diagnosis was wrong.
+  */
+  width: 100%;
+}
+
+/* This div holds the h1 title. We give it room to grow
+  and push the buttons to the right.
+*/
+#education header.major .header-title,
+#experience header.major .header-title {
+  flex-grow: 1; /* Take up the available space */
+}
+
+/* This styles the h1 title on the left for BOTH sections */
+#education header.major h1,
+#experience header.major h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+  display: inline-block;
+}
+
+/* This styles the animated underline for BOTH sections */
+#education header.major h1::after,
+#experience header.major h1::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100%;
+  margin: 0.1rem 0 0 0;
+  background: linear-gradient(90deg, #fff, rgba(138, 99, 255, 0.85));
+  border-radius: 3px;
+  transform: scaleX(0);
+  animation: underlineGrow 0.9s ease forwards 0.35s;
+}
+
+/* This is the wrapper for the buttons on the right */
+.header-actions {
+  display: flex;
+  flex-direction: row; /* Horizontal */
+  gap: 1rem;
+  flex-shrink: 0;
+  padding-left: 2rem; /* Add some space between title and buttons */
+}
+
+#education header.major > :first-child:after,
+#experience header.major > :first-child:after {
+  display: none !important;
+}
+
+/* This styles the buttons *inside* the header */
+.header-actions .button {
+  display: inline-block;
+  width: auto;
+  margin-bottom: 0; /* Remove any 'block' spacing */
+}
+
+#education .inner,
+#experience .inner {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+/* ✳️ Subheading */
+#education .section-subtitle,
+#experience .section-subtitle {
+  font-size: clamp(1rem, 3.5vw, 1.15rem);
+  font-weight: 300;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+  max-width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: normal;
+  background: #fff;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Responsive stacking for BOTH headers */
+@media (max-width: 768px) {
+  #education header.major,
+  #experience header.major {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  #education header.major .header-title,
+  #experience header.major .header-title {
+      text-align: center; /* Center the title on mobile */
+  }
+
+  .header-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    padding-left: 0; /* No padding needed when stacked */
+  }
+}
+
+
+/* Timeline wrapper */
+.experience-timeline {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+}
+
+/* Each row */
+.timeline-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+/* Year column */
+.timeline-year {
+  width: 150px;
+  text-align: right;
+  flex-shrink: 0;
+
+  .year {
+    font-size: 0.98rem;
+    color: #ddd;
+    font-weight: 600;
+  }
+}
+
+/* Dot + line container */
+.timeline-dot {
+  position: relative;
+  width: 60px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  .dot {
+    width: 16px;
+    height: 16px;
+    background: #8a63ff;
+    border-radius: 50%;
+    box-shadow: 0 0 16px rgba(138, 99, 255, 0.9);
+    z-index: 2;
+    transition: all 0.8s ease;
+  }
+
+  .line {
+    position: absolute;
+    top: 16px; /* start just below the dot */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 60px; /* default fallback */
+    background: linear-gradient(180deg, rgba(138, 99, 255, 0.8), #fff);
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(138, 99, 255, 0.8);
+    transition: height 0.05s linear; /* matches JS timing */
+    z-index: 0;
+  }
+}
+
+/* Card */
+.timeline-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  flex: 1 1 auto;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  transition: all 0.28s linear; /* matches JS timing */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+
+  h3 {
+    font-size: 1.05rem;
+    color: #fff;
+    margin: 0 0 0.35rem 0;
+  }
+
+  .summary {
+    color: #bfbfbf;
+    font-size: 0.94rem;
+    margin: 0;
+  }
+
+  .details {
+    color: #d0d0d0;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden; 
+    transition: max-height 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+                opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+                padding-top 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+}
+
+/* Hover effects */
+.timeline-row:hover .dot {
+  transform: scale(1.25);
+  box-shadow: 0 0 22px rgba(138, 99, 255, 1);
+}
+
+.timeline-row:hover .timeline-card {
+  background: rgba(138, 99, 255, 0.15);
+  transform: scale(1.02);
+}
+
+.timeline-row:hover .timeline-card .details {
+  opacity: 1;
+  max-height: 1000px;
+  padding-top: 0.6rem;
+}
+
+/* ✅ Responsive Fix for Experience Timeline */
+@media (max-width: 900px) {
+  .experience-timeline {
+    gap: 2rem;
+    position: relative;
+  }
+
+  .timeline-row {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-left: 2.25rem;
+  }
+
+  /* Vertical line across all cards */
+  .experience-timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(138, 99, 255, 0.8), #fff);
+    z-index: 0;
+  }
+
+  .timeline-year {
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
+    margin-bottom: 0.35rem;
+    position: relative;
+    z-index: 2;
+
+    .year {
+      font-size: 0.9rem;
+      color: #bfbfbf;
+    }
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: 0.75rem;
+    top: 0.75rem;
+    width: 12px;
+    height: 12px;
+    background: #8a63ff;
+    border-radius: 50%;
+    box-shadow: 0 0 16px rgba(138, 99, 255, 0.8);
+    z-index: 2;
+  }
+
+  .timeline-card {
+    width: 100%;
+    padding: 1rem 1.25rem 1.25rem 1.25rem;
+    margin-left: 0;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    position: relative;
+    z-index: 1;
+  }
+
+  .timeline-card h3 {
+    font-size: 1rem;
+  }
+
+  .timeline-card .summary {
+    font-size: 0.9rem;
+  }
+
+  .timeline-card .details {
+    font-size: 0.88rem;
+  }
+}
+
+
+/* Animation */
+@keyframes underlineGrow {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* ===========================================================
+   SPECIAL INVITE CARD — "You Could Be Next"
+   =========================================================== */
+
+.special-invite {
+  .timeline-card.invite-card {
+    background: linear-gradient(135deg, rgba(138, 99, 255, 0.15), rgba(255, 255, 255, 0.05));
+    border: 1px solid rgba(138, 99, 255, 0.35);
+    text-align: center;
+    padding: 1.8rem 1.5rem;
+    box-shadow: 0 0 25px rgba(138, 99, 255, 0.25);
+    border-radius: 14px;
+    position: relative;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.6s ease-out;
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
+      background: linear-gradient(90deg, #fff, #8a63ff);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .summary {
+      color: #cfcfcf;
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+
+  }
+
+  /* Glowing dot */
+  .invite-dot {
+    animation: pulseGlow 1.8s infinite ease-in-out;
+    box-shadow: 0 0 20px rgba(138, 99, 255, 0.9);
+  }
+
+  &.visible .timeline-card.invite-card {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &:hover .timeline-card.invite-card {
+    transform: translateY(-8px);
+    box-shadow: 0 0 35px rgba(138, 99, 255, 0.35);
+  }
+}
+
+/* Pulse animation for invite dot */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(138, 99, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(138, 99, 255, 1);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(138, 99, 255, 0.5);
+  }
+}
+
+
+/* ==================================================
+   6. UX CASE GRID - Matches Forty Aesthetic
+   ================================================== */
+
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* exactly 3 columns */
+  gap: 2em;
+  max-width: 1200px; /* fixed max width for clean layout */
+  margin: 3em auto; /* center the grid and leave side space */
+  padding: 0 0em; /* soft side padding */
+}
+
+/* Each Card */
+.case-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: none; /* removes that faint bottom line */
+  border-radius: 1rem;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 rgba(255,255,255,0);
+}
+
+.case-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Image Section */
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  transition: transform 0.4s ease;
+}
+
+.case-item:hover .image-wrapper img {
+  transform: scale(1.05);
+}
+
+/* Category Tag (Translucent) */
+.category-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0, 180, 216, 0.6); /* translucent aqua */
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-size: 0.8em;
+  font-weight: 600;
+  padding: 0.25em 0.75em;
+  border-radius: 0.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Text Section */
+.case-content {
+  padding: 1.2em 1.5em;
+}
+
+.case-content h3 {
+  color: #fff;
+  margin: 0.4em 0;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.case-content .description {
+  color: #ccc;
+  font-size: 0.9em;
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+/* Tags Section */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.tag {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 0.75em;
+  padding: 0.3em 0.7em;
+  border-radius: 0.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background 0.3s ease;
+}
+
+.tag:hover {
+  background: rgba(0, 180, 216, 0.6);
+}
+
+/* --- Responsive Layouts --- */
+
+/* Tablets (2 columns) */
+@media (max-width: 1024px) {
+  .case-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+  }
+}
+
+/* Phones (1 column) */
+@media (max-width: 600px) {
+  .case-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .image-wrapper img {
+    height: 180px;
+  }
+
+  .case-content {
+    padding: 1em;
+  }
+}
+
+
+/* ==========================
+   Hero Enhancements for Forty Theme
+========================== */
+
+#banner {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient overlay */
+#banner .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10,25,47,0.85) 0%, rgba(10,25,47,0.95) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Subtle geometric pattern */
+#banner .hero-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Make sure hero content stays above overlays */
+#banner .inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* Tagline styling */
+.hero-tagline {
+  margin-top: 0.8em;
+  font-size: 1.1em;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  line-height: 1.6em;
+}
+
+/* Hero title */
+.hero-title {
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #fff;
+}
+
+/* --- Google Design–style custom cursor --- */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: difference; /* creates color inversion */
+  background: white;
+  transform: translate(-50%, -50%);
+  transition:
+    transform 0.15s ease-out,
+    width 0.25s ease,
+    height 0.25s ease,
+    opacity 0.3s ease;
+  z-index: 9999;
+}
+
+body {
+  cursor: none; /* hide the native cursor */
+}
+
+/* smaller when hovering interactive elements */
+a:hover ~ .custom-cursor,
+button:hover ~ .custom-cursor,
+.custom-cursor.hover {
+  width: 48px;
+  height: 48px;
+}
+
+/* slightly smaller when clicking */
+.custom-cursor.active {
+  width: 40px;
+  height: 40px;
+}
+
+/* === Global cursor hide fix === */
+body, 
+html, 
+#banner, 
+.tiles, 
+.tiles article, 
+.tiles a, 
+section, 
+div,
+button {
+  cursor: none !important;
+}
+
+/* subtle pulse on hover */
+.custom-cursor.hover {
+  width: 48px;
+  height: 48px;
+  background: #ffffffcc; /* slightly translucent white */
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+
+/* === Final cursor hide fix === */
+a,
+button,
+.button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  cursor: none !important;
+}
+
+
+/* ==============================================
+   WORK SECTION — RESPONSIVE + GRADIENT + ANIMATION
+   ============================================== */
+
+#work-section {
+  position: relative;
+  padding: 0;
+  margin-top: 0%;
+  color: #fff;
+  overflow: hidden;
+  background: #121830;
+}
+
+/* ✨ Subtle radial gradient background */
+#work-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(138, 99, 255, 0.18) 0%,
+    transparent 70%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ✨ Top gradient overlay for blending */
+#work-section::after {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, rgba(18, 24, 48, 1));
+  z-index: 1;
+}
+
+/* Keep all content above background layers */
+#work-section .inner {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 0rem 0rem 0rem;
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100vw;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Header wrapper */
+#work-section header.major {
+  margin: 0rem auto 2rem auto;
+  max-width: auto;
+  width: 80%;
+  text-align: center;
+  color: #fff;
+}
+
+/* ✳️ Heading title */
+#work-section header.major h2 {
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: #fff;
+  letter-spacing: 0.5px;
+  word-break: break-word;
+  white-space: normal;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.2s;
+}
+
+/* ✳️ Animated underline */
+#work-section header.major h2::after {
+  content: "";
+  display: block;
+  height: 3px;
+  margin: 0.8rem auto 0;
+  width: 70%;
+  background: linear-gradient(90deg, #fff, rgba(138, 99, 255, 0.8));
+  border-radius: 3px;
+  transform-origin: center;
+  transform: scaleX(0);
+  animation: underlineGrow 1s ease forwards;
+  animation-delay: 0.6s;
+}
+
+/* ✳️ Subheading */
+#work-section .section-subtitle {
+  font-size: clamp(1rem, 3.5vw, 1.15rem);
+  font-weight: 300;
+  line-height: 1.6;
+  margin-top: 1.2rem;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  word-break: break-word;
+  white-space: normal;
+  background: linear-gradient(90deg, rgba(255,255,255,0.9), rgba(200,200,255,0.75));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+/* ✨ Animations */
+@keyframes underlineGrow {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive Tweaks */
+@media (max-width: 768px) {
+  #work-section .inner {
+    padding: 3rem 1rem;
+  }
+
+  #work-section header.major h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    line-height: 1.4;
+  }
+
+  #work-section .section-subtitle {
+    font-size: clamp(0.95rem, 4vw, 1rem);
+    line-height: 1.5;
+    margin-top: 1rem;
+    padding: 0 1rem;
+  }
+
+  #work-section header.major h2::after {
+    width: 60%;
+  }
+}
+
+@media (max-width: 480px) {
+  #work-section header.major h2 {
+    font-size: 1.3rem;
+    padding: 0 0.5rem;
+  }
+
+  #work-section .section-subtitle {
+    font-size: 0.9rem;
+    padding: 0 0.8rem;
+  }
+}
+
+/* ===========================================================
+   NEW "HERO PROJECT" CARD STYLING
+   =========================================================== */
+
+.hero-project-card {
+  display: flex;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  margin: 0 auto 2.5rem auto; /* spacing between cards */
+  max-width: auto;
+  width: 80%;
+  height: auto;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(138, 99, 255, 0.15);
+  }
+}
+
+.hero-project-image {
+  flex-basis: 55%;
+  flex-shrink: 0;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .hero-project-card:hover & img {
+    transform: scale(1.05);
+  }
+}
+
+.hero-project-content {
+  flex-basis: 55%;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0 0 0.25rem 0;
+  }
+
+  h4 {
+    font-size: 1rem;
+    color: #8a63ff; /* Your theme's accent color */
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+  }
+
+  .description {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Pushes tags/button to bottom */
+    text-align:justify;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+
+    .tag {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 0.4em 0.8em;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+  }
+
+  .button.special {
+    background-color: #8a63ff;
+    color: #fff !important;
+    align-self: flex-start; /* Don't stretch button */
+
+    &:hover {
+      background-color: lighten(#8a63ff, 5%);
+    }
+  }
+}
+
+/* --- Responsive for "Hero Project" card --- */
+@media (max-width: 900px) {
+  .hero-project-card {
+    flex-direction: column;
+    width: 90%;
+    max-width: 600px;
+  }
+
+  .hero-project-image {
+    flex-basis: auto;
+    width: 100%;
+    height: 250px; /* Give a fixed height on mobile */
+  }
+
+  .hero-project-content {
+    flex-basis: auto;
+    padding: 1.5rem;
+  }
+}
+
+/* --- "Explore All" Button Bar --- */
+.explore-all-bar {
+  text-align: center;
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+
+/* ===========================================================
+   EDUCATION "3-PILLAR" SECTION
+   =========================================================== */
+#education .education-pillar-grid {
+  display: grid;
+  /* Create 3 columns, or 1 on small screens */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  max-width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.education-pillar {
+  /* Re-using your "glass" aesthetic */
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.education-pillar:hover {
+  background: rgba(138, 99, 255, 0.1); /* Your purple accent */
+  border-color: rgba(138, 99, 255, 0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* The Icon */
+.education-pillar .icon {
+  font-size: 2.5rem;
+  color: #8a63ff; /* Your purple accent color */
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+/* The Title (e.g., "B.E. Electronics Engineer") */
+.education-pillar h3 {
+  font-size: 1.15rem;
+  color: #fff;
+  margin: 0 0 0.25rem 0;
+}
+
+/* The Institution (e.g., "Hamdard University") */
+.education-pillar h4 {
+  font-size: 0.9rem;
+  color: #ccc;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Responsive: Stack on mobile */
+@media (max-width: 768px) {
+  #education .education-pillar-grid {
+    /* This will stack them to 1 column */
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================================================
+   UTILITY: SECTION ACTION BUTTONS
+   This is a helper to align buttons in a section.
+   =========================================================== */
+.section-actions {
+  display: flex;
+  justify-content: center; /* Default is center */
+  align-items: center;
+  gap: 1rem; /* Adds nice spacing between buttons */
+  margin-top: 3em;
+}
+
+/* This is the new modifier you asked for */
+.section-actions.align-right {
+  justify-content: flex-end; /* Aligns buttons to the right */
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 600px) {
+  .section-actions {
+    flex-direction: column;
+    align-items: stretch; /* Makes buttons full-width */
+  }
+  
+  .section-actions .button {
+    width: 100%;
+  }
+}
+
+/* ===========================================================
+   FINAL "CONTACT" SECTION (v10 - The "Clean Slate" Fix)
+   =========================================================== */
+
+/* 1. This styles the main <section> tag */
+#contact {
+  background: #121830; /* Matches your Hero/Work bg */
+  padding: 2em 0;     /* Top/Bottom padding */
+  color: #fff;
+  overflow: hidden; /* Clear floats and prevent margin collapse */
+  min-height: 100dvh;
+}
+
+/* 2. THIS IS THE FIX: Our very own "safe space" container.
+   It ONLY provides width and padding, nothing else.
+*/
+.contact-inner {
+  max-width: 65em;  /* Max width of your other sections */
+  width: calc(100% - 6em);
+  margin: 0 auto;
+  padding: 0; /* Your "safe space" padding */
+}
+
+/* 3. This is our consistent "Split Header" CSS,
+   now 100% safe inside our new container.
+*/
+.contact-inner .split-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border: none;
+  box-shadow: none;
+  padding-top: 0;
+  width: 100%;
+}
+.contact-inner .split-header > :first-child:after {
+  display: none !important; /* Your "white line" fix */
+}
+.contact-inner .split-header .header-title {
+  flex-grow: 1;
+}
+.contact-inner .split-header .header-title h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+  display: inline-block; /* Fixes underline width */
+}
+.contact-inner .split-header .header-title h1::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100%;
+  margin: 0.6rem 0 0 0;
+  background: linear-gradient(90deg, #fff, rgba(138, 99, 255, 0.85));
+  border-radius: 3px;
+  transform: scaleX(0);
+  animation: underlineGrow 0.9s ease forwards 0.35s;
+}
+.contact-inner .split-header .header-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-shrink: 0;
+  padding-left: 2rem;
+}
+.contact-inner .split-header .header-actions .button {
+  display: inline-block;
+  width: auto;
+  margin-bottom: 0;
+}
+@media (max-width: 768px) {
+  .contact-inner .split-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .contact-inner .split-header .header-title {
+    text-align: center;
+  }
+  .contact-inner .split-header .header-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    padding-left: 0;
+  }
+}
+
+/* 4. NEW: "Available for Work" Status Button Fix
+   This adds the glowing "live" dot, as you requested.
+*/
+.contact-inner .header-actions .button.status-available {
+  background-color: #16A085 !important;
+  border-color: #16A085 !important;
+  opacity: 1;
+  cursor: default;
+  display: flex;
+  align-items: center;
+}
+.contact-inner .header-actions .button.status-available::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  margin-right: 0.75em;
+  box-shadow: 0 0 10px #fff, 0 0 20px #fff;
+  animation: pulse-live 1.8s infinite ease-in-out;
+}
+@keyframes pulse-live {
+  0% { opacity: 1; box-shadow: 0 0 10px #fff, 0 0 20px #fff; }
+  50% { opacity: 0.5; box-shadow: 0 0 5px #fff, 0 0 10px #fff; }
+  100% { opacity: 1; box-shadow: 0 0 10px #fff, 0 0 20px #fff; }
+}
+
+/* ===========================================================
+   CONTACT 35/65 LAYOUT 
+   =========================================================== */
+
+/* 1. This is the new 35/65 2-column wrapper */
+.contact-grid-top {
+  display: grid;
+  grid-template-columns: 73.5% 1fr; /* 35% / 65% split */
+  gap: 2.5rem; /* Space between the two columns */
+  max-width: auto;
+  margin: 0 auto; /* Center the new grid */
+}
+
+/* 2. This is the button stack in Column 1 */
+.contact-buttons-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center; /* Center buttons vertically */
+}
+/* This makes your theme buttons fill the 35% column */
+.contact-buttons-stack .button {
+  width: 100%;
+  margin: 0; /* Remove any default button margin */
+}
+
+/* 3. This is the NEW "Context" Card for Column 2.
+   It is designed to be DIFFERENT from your testimonials.
+*/
+.contact-intro-card {
+  background:  linear-gradient(135deg, rgba(138, 99, 255, 0.15), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  border: 1px solid rgba(138, 99, 255, 0.35);
+  padding: 2.5rem 3rem;
+  box-shadow: 0 0 25px rgba(138, 99, 255, 0.25);
+  transition: all 0.6s ease-out;
+  
+  /* This centers the "big text" inside */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 4. This is the "big text" you asked for */
+.contact-intro-card p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.8;
+  margin: 0;
+  text-align: center;
+}
+
+/* 5. Responsive: Stack to 1 column on mobile */
+@media (max-width: 900px) {
+  .contact-grid-top {
+    grid-template-columns: 1fr; /* Stack to 1 column */
+  }
+}
+.contact-inner .testimonial-section-header {
+  font-size: 1.25rem;
+  color: #fff;
+  margin: 1.5rem 0 1rem 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(138, 99, 255, 0.3);
+  padding-bottom: 0.75rem;
+  max-width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contact-inner .testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.1rem;
+  max-width: auto;
+  margin: 0 auto;
+}
+.contact-inner .testimonial-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.contact-inner .testimonial-card blockquote {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.7;
+  margin: 0 0 .5rem 0;
+  padding: 0;
+  border: 0;
+  font-style: italic;
+  flex-grow: 1;
+}
+.contact-inner .testimonial-card cite {
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 600;
+  font-style: normal;
+}
+.contact-inner .testimonial-card cite span {
+  color: #ccc;
+  font-weight: 400;
+  display: block;
+}
+.contact-inner .contact-location {
+  font-size: 0.9rem;
+  color: #ccc;
+  text-align: center;
+  margin-top: 2.5rem;
+}
+@media (max-width: 900px) {
+  .contact-inner .contact-cta-bar,
+  .contact-inner .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===========================================================
+   Single-Line Footer
+   =========================================================== */
+
+/* 1. Override the main footer padding to be smaller */
+#footer .inner {
+  /* We'll use a smaller padding for our single line */
+  padding: 2em 0 !important; 
+}
+
+/* 2. This is our new flex container */
+.footer-inline-wrapper {
+  display: flex;
+  justify-content: space-between; /* Pushes icons left, text right */
+  align-items: center;
+  width: 100%;
+}
+
+/* 3. Style the icon list (left side) */
+/* We need to override the theme's default "icons" styles */
+.footer-inline-wrapper .icons {
+  margin: 0; /* Remove default margins */
+}
+.footer-inline-wrapper .icons li {
+  display: inline-block; /* Make them horizontal */
+  padding: 0 0.75em 0 0; /* Space them out */
+}
+.footer-inline-wrapper .icons li:last-child {
+  padding-right: 0;
+}
+.footer-inline-wrapper .icons a.icon {
+    font-size: 1.25rem; /* Make icons a bit smaller */
+}
+
+/* 4. Style the copyright list (right side) */
+.footer-inline-wrapper .copyright {
+  margin: 0; /* Remove default margins */
+  list-style: none; /* Remove bullets */
+  padding: 0;
+  text-align: right; /* Align text to the right */
+}
+.footer-inline-wrapper .copyright li {
+  display: inline-block; /* Make them horizontal */
+  padding: 0 0.75em; /* Space them out */
+  margin: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.2); /* Separator */
+  font-size: 0.8em;
+  color: #ccc;
+}
+.footer-inline-wrapper .copyright li:first-child {
+  border-left: none; /* No separator on the first item */
+  padding-left: 0;
+}
+.footer-inline-wrapper .copyright a {
+    color: #fff; /* Make links brighter */
+    border-bottom: none;
+}
+.footer-inline-wrapper .copyright a:hover {
+    color: #8a63ff; /* Your purple accent */
+}
+
+/* 5. Responsive: Stack them on mobile */
+@media (max-width: 768px) {
+  .footer-inline-wrapper {
+    flex-direction: column; /* Stack them */
+    gap: 1.5em; /* Add space when stacked */
+  }
+  .footer-inline-wrapper .copyright {
+    text-align: center; /* Center everything */
+  }
+  .footer-inline-wrapper .copyright li {
+    display: block; /* Stack copyright text */
+    border-left: none;
+    padding: 0.25em 0;
+  }
+}
+
+/* ===========================================================
+   Header "Let's Talk" Button
+   =========================================================== */
+
+
+/* ===============================
+   CASE STUDY  STYLING
+   =============================== */
+
+
+.case-hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.case-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.4) 10, rgba(0,0,0,0.75) 100%);
+  z-index: 1;
+}
+
+.case-hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  padding: 3rem 2rem 1rem;
+  max-width: 900px;
+}
+
+.case-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.case-subtitle {
+  font-size: 1.25rem;
+  color: #e5e5e5;
+  margin-bottom: 1.25rem;
+}
+
+.case-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 1.25rem;
+}
+
+.case-meta .meta-item strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.case-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #f7f7f7;
+  opacity: 0.95;
+  max-width: auto;
+}
+
+/* 🌌 Case Body Background (same as Work Section aesthetic) */
+.case-body-wrapper {
+  position: relative;
+  color: #fff;
+  background: #121830;
+  overflow: hidden;
+  padding: 4rem 0;
+}
+
+/* ✨ Subtle radial gradient background */
+.case-body-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 0% 80%,
+    rgba(138, 99, 255, 0.18) 0%,
+    transparent 70%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ✨ Top gradient overlay for blending */
+.case-body-wrapper::after {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(to top, transparent, rgba(18, 24, 48, 1));
+  z-index: 1;
+}
+
+
+/* -------- Case Body (Markdown content) -------- */
+.case-body {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  line-height: 1.75;
+  color: #f3f3f3;
+  font-size: 1.05rem;
+}
+
+
+/* ---- Headings ---- */
+.case-body h1 {
+  position: relative;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-left: 1.25rem; /* space for the line */
+}
+
+/* ✨ Glowing vertical gradient line (instead of border) */
+.case-body h1::before {
+  content: "";
+  position: absolute;
+  top: 0.25rem;
+  left: 0;
+  width: 3px;
+  height: calc(100% - 0.5rem);
+  background: linear-gradient(180deg, rgba(138, 99, 255, 0.9), #fff);
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(138, 99, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+/* Optional hover or highlight animation */
+.case-body h1:hover::before {
+  height: 110%;
+  box-shadow: 0 0 15px rgba(138, 99, 255, 1);
+}
+
+
+.case-body h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.case-body h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ---- Paragraphs ---- */
+.case-body p {
+  margin-bottom: 1.25rem;
+  color: #ddd;
+}
+
+/* ---- Lists ---- */
+.case-body ul,
+.case-body ol {
+  margin: 1rem 0 1.5rem 1.5rem;
+  color: #ccc;
+}
+
+.case-body li {
+  margin-bottom: 0.5rem;
+}
+
+/* ---- Images ---- */
+.case-body img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 2rem 0;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease;
+}
+
+.case-body img:hover {
+  transform: scale(1.02);
+}
+
+.case-body strong {
+  color: #fff;
+}
+
+.case-body a {
+  color: #8a63ff;
+  text-decoration: none;
+}
+
+.case-body a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Blockquotes ---- */
+.case-body blockquote {
+  border-left: 4px solid #2563eb;
+  
+  background: rgba(255, 255, 255, 0.06);
+  color: #242943;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- Custom Info Boxes ---- */
+.case-body .highlight-box {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+}
+
+.case-body .highlight-box h3 {
+  margin-top: 0;
+  color: #1e3a8a;
+}
+
+.case-body .insight {
+  background: #fef9c3;
+  border-left: 4px solid #eab308;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+  color: #78350f;
+}
+
+/* ---- Section Divider ---- */
+.case-body hr {
+  border: none;
+  height: 2px;
+  background: #e5e7eb;
+  margin: 3rem 0;
+}
+
+.case-body figcaption {
+  font-size: 0.9rem;
+  text-align: center;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* -------- Navigation -------- */
+.case-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: 3rem auto 5rem;
+  padding: 0 1.5rem;
+}
+
+.case-nav-link {
+  color: #1e40af;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.case-nav-link:hover {
+  color: #2563eb;
+}
+
+/* -------- Responsive -------- */
+@media (max-width: 768px) {
+  .case-hero {
+    height: 60vh;
+  }
+
+  .case-title {
+    font-size: 2rem;
+  }
+
+  .case-subtitle {
+    font-size: 1rem;
+  }
+
+  .case-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .header-actions .button {
+    font-size: 0.8rem;
+    padding: 0.6rem 1rem;
+    white-space: normal; /* Allow wrapping if needed */
+    text-align: center;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-actions .button {
+    width: 100%;
+  }
+}
