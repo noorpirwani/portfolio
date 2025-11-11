@@ -79,7 +79,7 @@ The research relied on secondary data, analyzing existing SaaS products, healthc
 - **User Persona:** B2B admins, sales managers, procurement officers.
 
 ## Key Findings:
-![User Research Findings](/portfolio/assets/images/medifinder/user-research.png)
+![User Research Findings](/portfolio/assets/images/medifinder/user-research.webp)
 
 # Architecture & User Flows
 
@@ -89,7 +89,7 @@ To design a complex B2B application, I first established a logical information a
 
 My primary goal for the IA was to create a flat, logical structure that follows a business user's mental model. I grouped all functions into five core sections.
 
-![Information Architecture](/portfolio/assets/images/medifinder/ia.png)
+![Information Architecture](/portfolio/assets/images/medifinder/ia.webp)
 
 The five main navigation sections are:
 
@@ -106,22 +106,22 @@ I mapped four key flows to ensure a seamless experience, from onboarding to lead
 ### 1. Search & Discovery Flow
 **The Goal:** To help users find relevant hospitals and decision-makers as quickly as possible, using AI to assist in discovery.
 
-![Search & Discovery Flow](/portfolio/assets/images/medifinder/search.png)
+![Search & Discovery Flow](/portfolio/assets/images/medifinder/search.webp)
 
 ### 2. Onboarding Flow
 **The Goal:** To get a new user verified and into the dashboard with minimal steps and maximum clarity.
 
-![Onboarding Flow](/portfolio/assets/images/medifinder/onboarding.png)
+![Onboarding Flow](/portfolio/assets/images/medifinder/onboarding.webp)
 
 ### 3. Contacts & Lead Management Flow
 **The Goal:** To show how users save, tag, and manage leads, replacing the need for scattered spreadsheets and manual CRM entries.
 
-![Contacts & Lead Management Flow](/portfolio/assets/images/medifinder/lead.png)
+![Contacts & Lead Management Flow](/portfolio/assets/images/medifinder/lead.webp)
 
 ### 4. Subscription & Billing Flow
 **The Goal:** To provide a transparent and simple way for admin users to manage plans and payments.
 
-![Subscription & Billing Flow](/portfolio/assets/images/medifinder/subscription.png)
+![Subscription & Billing Flow](/portfolio/assets/images/medifinder/subscription.webp)
 
 # Wireframes & High-Fidelity Design
 
@@ -129,17 +129,17 @@ I mapped four key flows to ensure a seamless experience, from onboarding to lead
 
 I began the design phase with low-fidelity wireframes to validate the core layout, hierarchy, and interactions. My focus was on clarity and speed, iterating grayscale "blueprints" to finalize the primary user actions of navigation, discovery, and saving.
 
-![Low-Fidelity Search Wireframe](/portfolio/assets/images/medifinder/lofi.png)
+![Low-Fidelity Search Wireframe](/portfolio/assets/images/medifinder/lofi.webp)
 
 ## High-Fidelity Design
 
 These blueprints were then translated into a final, high-fidelity, and accessible design system. This system was applied consistently across all key screens—from the user's "home base" on the Dashboard to the core "Search" and "Details" pages—to create a single, cohesive, and scalable product.
 
-![Dashboard](/portfolio/assets/images/medifinder/dashboard.png)
+![Dashboard](/portfolio/assets/images/medifinder/dashboard.webp)
 
-![Search & AI Recommendations](/portfolio/assets/images/medifinder/ai-recommendations.png)
+![Search & AI Recommendations](/portfolio/assets/images/medifinder/ai-recommendations.webp)
 
-![Contact Details](/portfolio/assets/images/medifinder/contact.png)
+![Contact Details](/portfolio/assets/images/medifinder/contact.webp)
 
 
 # UX Strategy & Key Decisions
@@ -154,7 +154,7 @@ These principles were applied through several key decisions:
 - Scalable team management with clear permissions.
 - A consistent 12-column grid and modular spacing system.
 
-![Annotated Search Mockup](/portfolio/assets/images/medifinder/annotated.png)
+![Annotated Search Mockup](/portfolio/assets/images/medifinder/annotated.webp)
 
 # Visual Design Direction & Design System
 
@@ -184,7 +184,7 @@ Icons: Line icons themed for health-tech.
 ## AI Tools for UI Acceleration:
 ChatGPT and Figma AI Assistants were used for placeholder generation, layout structuring, and design variation suggestions.
 
-![Design System Board](/portfolio/assets/images/medifinder/design-system.png)
+![Design System Board](/portfolio/assets/images/medifinder/design-system.webp)
 
 
 # Prototype & Interaction Highlights
