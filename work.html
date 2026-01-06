@@ -59,3 +59,67 @@ We are re-using it for our "All Work" gallery.-->
     </div>
     </div>
 </section>
+
+<div class="section-divider">
+  <span></span>
+</div>
+
+<!-- =====================================
+     UI WORK COLLAGES SECTION
+===================================== -->
+<section id="ui-collages">
+
+  <!-- HEADING ROW (NOT STICKY) -->
+  <div class="ui-collage-heading">
+    <div class="inner">
+      <header class="major">
+        <h2>Selected UI Work</h2>
+        <p class="section-subtitle">
+          A visual showcase of production UI work across mobile, web, and SaaS platforms.
+        </p>
+      </header>
+    </div>
+  </div>
+  
+  <!-- FILTER ROW (STICKY) -->
+  <div class="ui-filter-controls">
+    <div class="inner ui-filter-inner">
+      <div class="ui-filters">
+        <span class="filter-tag is-active" data-filter="all">All</span>
+        <span class="filter-tag" data-filter="Mobile App">Mobile App</span>
+        <span class="filter-tag" data-filter="Web App">Web App</span>
+        <span class="filter-tag" data-filter="Responsive Web">Responsive Web</span>
+        <span class="filter-tag" data-filter="SaaS Dashboard">SaaS Dashboard</span>
+        <span class="filter-tag" data-filter="Admin Panel">Admin Panel</span>
+        <span class="filter-tag" data-filter="Enterprise System">Enterprise System</span>
+        <span class="filter-tag" data-filter="Landing / Marketing Site">Landing / Marketing Site</span>
+        <span class="filter-tag" data-filter="Internal Tool">Internal Tool</span>
+      </div>
+
+      <div class="ui-filter-count">
+        Showing <strong><span id="visible-count">0</span></strong> works
+      </div>
+    </div>
+  </div>
+
+
+  <!-- COLLAGES -->
+  <div class="inner">
+    <div class="ui-collage-list">
+      {% for item in site.data.ui_collages %}
+      <section
+        id="{{ item.id }}"
+        class="ui-collage"
+        data-platforms="{{ item.platform | join: ',' }}"
+      >
+        <img
+          src="{{ item.image | relative_url }}"
+          alt="{{ item.title }}"
+          loading="lazy"
+        >
+      </section>
+      {% endfor %}
+    </div>
+  </div>
+
+</section>

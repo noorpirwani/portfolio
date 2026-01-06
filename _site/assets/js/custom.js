@@ -84,3 +84,86 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   });
 });
+
+
+/* ===========================================================
+   UI COLLAGE
+   =========================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const filterTags = document.querySelectorAll(".filter-tag");
+  const collages = document.querySelectorAll(".ui-collage");
+
+  let activeFilters = ["all"];
+
+  function updateCollages() {
+    const normalizedFilters = activeFilters.map(f =>
+      f.toLowerCase().trim()
+    );
+
+    collages.forEach(collage => {
+      const platforms = collage.dataset.platforms
+        .split(",")
+        .map(p => p.toLowerCase().trim());
+
+      if (normalizedFilters.includes("all")) {
+        collage.classList.remove("is-hidden");
+        return;
+      }
+
+      const match = normalizedFilters.some(f =>
+        platforms.includes(f)
+      );
+
+      collage.classList.toggle("is-hidden", !match);
+    });
+        const visibleCount = document.querySelector("#visible-count");
+let count = 0;
+
+collages.forEach(collage => {
+  if (!collage.classList.contains("is-hidden")) {
+    count++;
+  }
+});
+
+if (visibleCount) {
+  visibleCount.textContent = count;
+}
+  }
+
+  filterTags.forEach(tag => {
+    tag.addEventListener("click", () => {
+      const filter = tag.dataset.filter.toLowerCase().trim();
+
+      if (filter === "all") {
+        activeFilters = ["all"];
+        filterTags.forEach(t => t.classList.remove("is-active"));
+        tag.classList.add("is-active");
+        updateCollages();
+        return;
+      }
+
+      activeFilters = activeFilters.filter(f => f !== "all");
+      document.querySelector('[data-filter="all"]').classList.remove("is-active");
+
+      if (activeFilters.includes(filter)) {
+        activeFilters = activeFilters.filter(f => f !== filter);
+        tag.classList.remove("is-active");
+      } else {
+        activeFilters.push(filter);
+        tag.classList.add("is-active");
+      }
+
+      if (activeFilters.length === 0) {
+        activeFilters = ["all"];
+        document.querySelector('[data-filter="all"]').classList.add("is-active");
+      }
+
+      updateCollages();
+    });
+  });
+
+  updateCollages();
+});
+
+

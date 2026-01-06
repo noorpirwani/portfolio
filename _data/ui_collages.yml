@@ -1,0 +1,26 @@
+- id: xloop_htal
+  image: /assets/images/ui-collages/xloop_htal.webp
+  platform: [SaaS Dashboard,Admin Panel,Enterprise System,Internal Tool]
+  context: xloop
+
+- id: xloop_xcelerate
+  image: /assets/images/ui-collages/xloop_xcelerate.webp
+  platform: [SaaS Dashboard,Admin Panel,Enterprise System,Internal Tool]
+  context: xloop
+
+- id: xloop_serefin
+  image: /assets/images/ui-collages/xloop_serefin.webp
+  platform: [Landing / Marketing Site]
+  context: xloop
+
+- id: xloop_after5
+  image: /assets/images/ui-collages/xloop_after5.webp
+  platform: [Mobile App]
+  context: xloop
+
+- id:  freelance_eazyfiscal
+  image: /assets/images/ui-collages/freelance_eazyfiscal.webp
+  platform: [Landing / Marketing Site]
+  context: xloop
+
+

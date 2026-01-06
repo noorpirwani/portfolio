@@ -3,6 +3,12 @@
    For Jekyll Forty Theme (Portfolio)
    ============================================== */
 
+/* === Restore Forty animation lifecycle === */
+body.is-preload * {
+  animation: none !important;
+  transition: none !important;
+}
+
 /* ===========================================================
    NEW "SPLIT HEADER" for education and experience
    =========================================================== */
@@ -405,7 +411,7 @@
   grid-template-columns: repeat(3, 1fr); /* exactly 3 columns */
   gap: 2em;
   max-width: 1200px; /* fixed max width for clean layout */
-  margin: 3em auto; /* center the grid and leave side space */
+  margin: 0em auto; /* center the grid and leave side space */
   padding: 0 0em; /* soft side padding */
 }
 
@@ -726,9 +732,6 @@ input[type="reset"] {
   margin: 0 auto;
   display: inline-block;
   text-align: center;
-  opacity: 0;
-  animation: fadeUp 1s ease forwards;
-  animation-delay: 0.2s;
 }
 
 /* ✳️ Animated underline */
@@ -761,9 +764,47 @@ input[type="reset"] {
   background: linear-gradient(90deg, rgba(255,255,255,0.9), rgba(200,200,255,0.75));
   background-clip: text;
   -webkit-text-fill-color: transparent;
+
+}
+/* Work section initial state */
+body.is-preload #work-section header.major h2,
+body.is-preload #work-section .section-subtitle {
   opacity: 0;
-  animation: fadeUp 1s ease forwards;
-  animation-delay: 0.5s;
+  transform: translateY(25px);
+}
+
+/* Animate AFTER preload ends */
+body:not(.is-preload) #work-section header.major h2 {
+  animation: workFadeUp 0.9s ease forwards;
+}
+
+body:not(.is-preload) #work-section .section-subtitle {
+  animation: workFadeUp 0.9s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Underline */
+body.is-preload #work-section header.major h2::after {
+  transform: scaleX(0);
+}
+
+body:not(.is-preload) #work-section header.major h2::after {
+  animation: workUnderline 0.8s ease forwards;
+  animation-delay: 0.6s;
+}
+
+/* Scoped animations (SAFE) */
+@keyframes workFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes workUnderline {
+  to {
+    transform: scaleX(1);
+  }
 }
 
 /* ✨ Animations */
@@ -1671,4 +1712,163 @@ input[type="reset"] {
   .header-actions .button {
     width: 100%;
   }
+}
+
+/* =====================================
+   UI COLLAGES
+===================================== */
+
+#ui-collages {
+  padding: 0rem 0;
+}
+
+.ui-collage-heading {
+  background: #121830;
+  padding: 1rem 2rem 1rem 2rem;
+}
+
+/* ---------- FILTER BAR ---------- */
+
+.ui-filter-controls {
+  position: sticky;
+  top: var(--header-height, 60px); /* dynamic-friendly */ /* 👈 IMPORTANT */
+  z-index: 100;
+
+  background: rgba(18, 24, 48, 0.92);
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  transition: box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.ui-filter-inner {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 1rem 2rem 1rem 2rem;
+}
+
+.ui-filters {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.ui-filter-count {
+  font-size: 0.85rem;
+  color: #bfbfbf;
+  padding-left: 0rem;
+  white-space: nowrap;
+}
+
+
+
+#header + section {
+  margin-top: inherit !important;
+}
+
+/* ---------- FILTER TAG ---------- */
+.filter-tag {
+  padding: 0.35rem 1rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  color: #d6d6d6;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.filter-tag:hover {
+  background: rgba(138, 99, 255, 0.25);
+  color: #fff;
+}
+
+.filter-tag.is-active {
+  background: rgba(138, 99, 255, 0.9);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(138, 99, 255, 0.7);
+}
+
+/* ---------- COLLAGES ---------- */
+
+.ui-collage {
+  position: relative;
+  transition: 
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.ui-collage-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  margin-top: 3rem;
+}
+
+.ui-collage img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+
+  background: #0b0f23;
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.55),
+    0 0 0 1px rgba(138,99,255,0.18);
+
+  transition:
+    box-shadow 0.35s ease,
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+.ui-collage.is-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  position: absolute;
+  left: -9999px; /* removes layout jump */
+}
+
+/* ✨ HOVER MAGIC */
+.ui-collage:hover img {
+  transform: translateY(-4px) scale(1.01);
+  filter: saturate(1.15) contrast(1.05);
+
+  box-shadow:
+    0 35px 80px rgba(0,0,0,0.7),
+    0 0 0 1px rgba(138,99,255,0.45),
+    0 0 28px rgba(138,99,255,0.45);
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 768px) {
+  .ui-filter-bar {
+    top: 56px;
+  }
+
+  .ui-collage-list {
+    gap: 2rem;
+  }
+}
+
+.section-divider {
+  width: 100%;
+  margin: 5rem 0 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.section-divider span {
+  width: 1080px;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.35),
+    transparent
+  );
 }
