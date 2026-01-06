@@ -42,6 +42,11 @@
                     </p>
                 </header>
 
+                                <!-- "Explore All" Button Bar -->
+                <div class="explore-all-bar">
+                    <a href="{{ '/work.html' | relative_url }}" class="button">View Full Portfolio</a>
+                </div>
+
                 <!--Loop for "Hero" cards -->
                 <div class="hero-project-wrapper">
                     {% assign featured_projects = site.uxcase | reverse %}
@@ -70,10 +75,6 @@
                         </div>
                     </div>
                     {% endfor %}
-                </div>
-                <!-- "Explore All" Button Bar -->
-                <div class="explore-all-bar">
-                    <a href="{{ '/work.html' | relative_url }}" class="button">View Full Portfolio</a>
                 </div>
 
             </div>
