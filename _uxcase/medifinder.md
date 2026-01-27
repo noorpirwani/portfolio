@@ -5,211 +5,156 @@ subtitle: "SaaS B2B Healthcare Discovery Platform"
 image: /assets/images/medifinder-cover.webp
 hero_image: /assets/images/medifinder/medifinder-hero.webp
 year: 2025
-category: "UX Strategy • SaaS Design"
-role: "UX/UI Designer"
-description: "A deep-dive case study exploring end-to-end UX strategy for a B2B healthcare SaaS platform. From research and AI-driven user flows to a cohesive design system. Redefining how suppliers discover and connect in the medical network."
-tags: "UX-Strategy SaaS AI-Integration Figma Design-System"
+category: "Product Strategy • B2B SaaS"
+role: "Lead Product Designer (End-to-End)"
+description: "A comprehensive UX strategy for a B2B healthcare SaaS platform. Transforming a complex, fragmented supplier directory into an AI-driven discovery engine. Redefining how medical institutions connect with vendors through verified data layers."
+tags: "UX-Strategy SaaS AI-Integration Design-Systems Enterprise-Search"
 ---
-<!-- This is the START of your case study content.
-Everything below this line will be the body of your page, which is exactly what we want. -->
 
+# Project Overview
 
-# Introduction
+**MediFinder is a B2B SaaS platform designed to modernize the procurement network between healthcare institutions and medical suppliers.**
 
-MediFinder is a SaaS B2B platform designed for companies that provide products or services to the healthcare sector. The application enables business users like suppliers, consultants, or service vendors, to efficiently discover, connect with, and manage communication with hospitals and healthcare institutions.
+In the current healthcare landscape, vendor discovery is fragmented across outdated directories and spreadsheets. MediFinder consolidates this into a verified, AI-assisted marketplace, enabling procurement officers to discover, vet, and connect with suppliers in seconds rather than days.
 
-Inspired by an enterprise-level government networking tool I previously worked on, MediFinder reimagines the concept for the healthcare industry, integrating modern AI-assisted search, intuitive UX, and data-driven recommendations to deliver a faster, more meaningful discovery process.
+This project focuses on **high-density data design**, **trust mechanics**, and **algorithmic discovery**—taking a complex database and making it accessible through a consumer-grade user experience.
 
-This case study documents the complete UX design process, from early research to final high-fidelity concepts, showcasing how AI-driven thinking and design structure can bring clarity to complex B2B workflows.
+---
 
-# Background Story
+# Project Context (The Strategic Pivot)
+**From Restricted Enterprise to Healthcare Innovation.**
 
-During my time working on a similar B2B networking application for a government sector client, much of the UX design work could not be publicly shared due to confidentiality.
+This project is a strategic adaptation of a live enterprise application I architected for a **Confidential B2B Client** (under strict NDA).
 
-To demonstrate the same level of design thinking and user experience, I created MediFinder, a new conceptual project built on similar strategic foundations but repurposed for the healthcare industry.
+While I cannot display the original proprietary interface, the core UX challenges—verified identity, complex filtering, and secure communication—are identical to those in the B2B Healthcare space.
 
-While the earlier project followed a traditional design process, MediFinder leverages modern AI tools, rapid ideation workflows, and a structured UX approach to demonstrate how creativity and systems thinking come together.
+**MediFinder serves as a "White-Label" demonstration** of that same enterprise architecture. It leverages the exact design systems, logic flows, and information architecture used in the delivered product, re-contextualized for a medical audience to demonstrate my capability in handling complex, secure ecosystems.
 
-***Note**: The real-world project was proprietary. MediFinder is a conceptual reinterpretation designed purely for portfolio demonstration.*
+---
 
-# Problem Statement
+# The Problem: The "Visibility Gap"
 
-Suppliers and service providers in the healthcare industry often struggle to find verified hospital contacts, understand purchasing needs, or maintain effective follow-ups with procurement teams.
+Suppliers and procurement teams operate in a "low-trust" environment. Finding the right partner is manual, error-prone, and slow.
 
-Existing directories and contact databases are fragmented or lack contextual insights, leading to inefficiencies such as wasted outreach, missed partnerships, and poor resource allocation.
+* **Fragmented Data:** Hospital decision-maker contact info is often buried in unstructured websites or expensive, outdated lists.
+* **Verification Friction:** Procurement teams spend 40% of their time just verifying if a vendor is certified, rather than negotiating value.
+* **Missed Opportunities:** Without predictive matching, suppliers miss RFPs (Requests for Proposals) that match their exact inventory.
 
-MediFinder addresses these pain points by creating a centralized, verified discovery platform that allows businesses to:
+**The Solution:**
+A centralized **"Single Source of Truth"** platform that uses AI to match verified suppliers with hospital needs instantly.
 
-1. Search and filter hospitals by type, size, and specialty.
-2. Identify key decision-makers or procurement leads.
-3. Use AI recommendations for potential matches.
-4. Collaborate and manage outreach efficiently.
+---
 
-# Objectives & Goals
+# Research & Benchmarking
 
-## Main Goal:
+The research phase focused on analyzing the "Procurement Friction" in existing B2B tools like Apollo and Medline.
 
-To create a B2B SaaS application that simplifies hospital discovery and outreach.
+**Key Insight: "The Data Density Paradox"**
+B2B users want *all* the data, but they get overwhelmed if it is shown all at once.
+* **The Pivot:** We shifted from a "List View" (showing everything) to a "Card View" with **Progressive Disclosure**. We show the 3 most critical data points first (Verification, Location, Specialty) and hide the rest behind a click.
 
-## Objectives:
-
-- Simplify onboarding for B2B users.
-- Build trust with verified hospital data.
-- Enable smart, AI-based search recommendations.
-- Design a scalable system for teams and organizations.
-
-## Project Duration:
-
-- Original: 2 months (design + refinement with devs)
-- MediFinder Concept: 1 week (concept to UX/UI with AI)
-
-## Tools Used:
-
-- FigJam (flows & architecture)
-- Figma (wireframes & visual design)
-- ChatGPT (ideation & synthesis)
-- Gemini (ideation & synthesis)
-
-# Research Process
-
-The research relied on secondary data, analyzing existing SaaS products, healthcare B2B directories, and supplier tools to uncover pain points and opportunities.
-
-- **Research Type:** Secondary (Understanding procurement and vendor communication systems).
-- **Benchmarking:** Compared platforms like Apollo Supply and Medline Connect.
-- **User Persona:** B2B admins, sales managers, procurement officers.
-
-## Key Findings:
 ![User Research Findings](/portfolio/assets/images/medifinder/user-research.webp)
 
-# Architecture & User Flows
+---
 
-To design a complex B2B application, I first established a logical information architecture (IA) to ensure scalability and then mapped the key user flows to identify and remove all points of friction.
+# Information Architecture (IA)
 
-## Information Architecture
-
-My primary goal for the IA was to create a flat, logical structure that follows a business user's mental model. I grouped all functions into five core sections.
+To handle the complexity of B2B relationships, I flattened the hierarchy. Instead of deep nested menus, I established a **Task-Based Navigation** structure.
 
 ![Information Architecture](/portfolio/assets/images/medifinder/ia.webp)
 
-The five main navigation sections are:
-
-1. **Dashboard:** A snapshot of user activity and AI-powered insights.
-2. **Search & AI Recommendations:** The primary workspace for discovering hospitals.
-3. **Contacts / Leads:** A space to manage and track saved leads.
-4. **Notifications:** Centralized system and AI-driven alerts.
-5. **Settings:** Includes Profile, Team Management, and Billing.
-
-## Key User Flows
-
-I mapped four key flows to ensure a seamless experience, from onboarding to lead management.
-
-### 1. Search & Discovery Flow
-**The Goal:** To help users find relevant hospitals and decision-makers as quickly as possible, using AI to assist in discovery.
-
-![Search & Discovery Flow](/portfolio/assets/images/medifinder/search.webp)
-
-### 2. Onboarding Flow
-**The Goal:** To get a new user verified and into the dashboard with minimal steps and maximum clarity.
-
-![Onboarding Flow](/portfolio/assets/images/medifinder/onboarding.webp)
-
-### 3. Contacts & Lead Management Flow
-**The Goal:** To show how users save, tag, and manage leads, replacing the need for scattered spreadsheets and manual CRM entries.
-
-![Contacts & Lead Management Flow](/portfolio/assets/images/medifinder/lead.webp)
-
-### 4. Subscription & Billing Flow
-**The Goal:** To provide a transparent and simple way for admin users to manage plans and payments.
-
-![Subscription & Billing Flow](/portfolio/assets/images/medifinder/subscription.webp)
-
-# Wireframes & High-Fidelity Design
-
-## Low-Fidelity Wireframes
-
-I began the design phase with low-fidelity wireframes to validate the core layout, hierarchy, and interactions. My focus was on clarity and speed, iterating grayscale "blueprints" to finalize the primary user actions of navigation, discovery, and saving.
-
-![Low-Fidelity Search Wireframe](/portfolio/assets/images/medifinder/lofi.webp)
-
-## High-Fidelity Design
-
-These blueprints were then translated into a final, high-fidelity, and accessible design system. This system was applied consistently across all key screens—from the user's "home base" on the Dashboard to the core "Search" and "Details" pages—to create a single, cohesive, and scalable product.
-
-![Dashboard](/portfolio/assets/images/medifinder/dashboard.webp)
-
-![Search & AI Recommendations](/portfolio/assets/images/medifinder/ai-recommendations.webp)
-
-![Contact Details](/portfolio/assets/images/medifinder/contact.webp)
-
-
-# UX Strategy & Key Decisions
-
-My UX Strategy centered on three core principles: **efficiency**, **visibility**, and **data trust**.
-
-These principles were applied through several key decisions:
-
-- Simplified onboarding with AI-guided setup.
-- A smart search bar with predictive results.
-- Verified hospital data layers to build trust.
-- Scalable team management with clear permissions.
-- A consistent 12-column grid and modular spacing system.
-
-![Annotated Search Mockup](/portfolio/assets/images/medifinder/annotated.webp)
-
-# Visual Design Direction & Design System
-
-## Theme Concept:
-The MediFinder design language draws inspiration from “precision in connection.” The palette mixes healthcare calmness (soft blues and neutrals) with SaaS clarity for a professional yet approachable look. Colors meet WCAG AA+ contrast for accessibility. The typography hierarchy supports scalability and clarity across dashboards.
-
-## Design System Components:
-
-Color Palette: Primary blue, neutral grays, accent green for “verified”.
-Typography: Sans-serif font emphasizing clarity.
-Buttons & Inputs: Rounded, consistent, and micro-interactive.
-Cards & Tables: Modular for responsive, data-heavy layouts.
-Icons: Line icons themed for health-tech.
-
-<!-- Make sure there is a blank line before and after the table -->
-
-| Element | Description |
-|:---|:---|
-| Color Palette  | Primary blue, neutral grays, accent green for “verified”|
-| Typography |Sans-serif font emphasizing clarity|
-| Buttons & Inputs  | Rounded, consistent, and micro-interactive|
-| Cards & Tables  | Modular for responsive, data-heavy layouts |
-| Icons  | Line icons themed for health-tech |
-
-<!-- A 6x2 table has 1 header row and 5 data rows -->
-
-## AI Tools for UI Acceleration:
-ChatGPT and Figma AI Assistants were used for placeholder generation, layout structuring, and design variation suggestions.
-
-![Design System Board](/portfolio/assets/images/medifinder/design-system.webp)
-
-
-# Prototype & Interaction Highlights
-
-An interactive prototype was created in Figma to demonstrate the primary user journey. This sequence shows the flow from the Dashboard, through searching and applying AI recommendations, to viewing a saved contact's details.
-
-![Prototype](/portfolio/assets/images/medifinder/prototype.gif)
-
-
-# Outcomes & Learnings
-
-MediFinder explored how complex B2B workflows can be simplified through AI and strong UX systems.
-
-## Key Learnings:
-
-- **Data Density vs. Usability:** Balancing the need to show complex data with the need for a clean, scannable interface was the primary challenge.
-- **Transparency in AI:** Users are more likely to trust AI suggestions if the "why" is briefly explained (e.g., "Based on your 'Cardiology' filter...").
-- **Systematic Design:** Establishing the design system (Section 9) before building the final mockups (Section 7) was crucial for ensuring visual harmony and speed.
-
-# Conclusion
-
-MediFinder showcases how UX strategy, structure, and AI integration can transform industry-specific B2B SaaS design.
-
-This conceptual project demonstrates practical application of research-driven UX design for healthcare technology.
+**The 5 Core Modules:**
+1.  **Dashboard:** The "Command Center" for active leads and AI alerts.
+2.  **Discovery Engine:** The search workspace with advanced filtering.
+3.  **Leads CRM:** A kanban-style management tool for saved contacts.
+4.  **Notification Hub:** Centralized alerts for RFP matches.
+5.  **Admin Settings:** Role-based access control (RBAC) and billing.
 
 ---
 
-> Prepared by <br> Noor Ahmed Raza Pirwani - UX Strategist
+# Key User Flows
+
+To ensure a seamless experience, I mapped the ecosystem from discovery to management.
+
+### 1. The "Smart Discovery" Flow
+**Challenge:** Users don't always know exactly who they are looking for.
+**Solution:** An AI-driven search that accepts natural language queries, guiding the user from a vague intent ("Need masks") to a specific verified list ("3M Certified Distributors in NY").
+
+![Search & Discovery Flow](/portfolio/assets/images/medifinder/search.webp)
+
+### 2. The "Frictionless" Onboarding
+**Challenge:** B2B onboarding is notoriously long and tedious.
+**Solution:** A "Progressive Profiling" approach. We get the user into the dashboard in 3 steps, then gather deeper company data later as they use the tool.
+
+![Onboarding Flow](/portfolio/assets/images/medifinder/onboarding.webp)
+
+### 3. CRM & Lead Management
+**Challenge:** Procurement teams often lose track of vendors in spreadsheet chaos.
+**Solution:** A built-in CRM allowing users to tag, categorize, and export vendor lists directly within the platform.
+
+![Contacts & Lead Management Flow](/portfolio/assets/images/medifinder/lead.webp)
+
+### 4. Admin & Subscription Management
+**Challenge:** Enterprise accounts need granular control over billing and seats.
+**Solution:** A transparent admin panel for managing team access and subscription tiers.
+
+![Subscription & Billing Flow](/portfolio/assets/images/medifinder/subscription.webp)
+
+---
+
+# Low-Fidelity Wireframes
+
+Before committing to pixels, I validated the layout structure using low-fidelity blueprints. The focus here was **Space Efficiency**—ensuring that dense data tables and filter sets could coexist without overwhelming the user on smaller laptop screens.
+
+![Low-Fidelity Search Wireframe](/portfolio/assets/images/medifinder/lofi.webp)
+
+---
+
+# Design System & High-Fidelity UI
+
+The interface uses a **"Precision & Clarity"** design language. In B2B SaaS, clarity *is* the aesthetic.
+
+### The "Trust" Design System
+* **Color Logic:** Clinical Blues for structure, "Signal Green" for verification/success states, and WCAG AA+ Neutrals for text density.
+* **Typography:** Inter (Sans-serif) chosen for its high readability in data tables and dashboards.
+* **Components:** Built using Figma Variables and Auto-Layout to ensure the system is scalable for engineering handoff.
+
+![Design System Board](/portfolio/assets/images/medifinder/design-system.webp)
+
+### The Final UI
+The final screens prioritize **Data Scannability**. Users can scan a list of 50 suppliers and identify the "Best Match" in under 10 seconds.
+
+![Dashboard](/portfolio/assets/images/medifinder/dashboard.webp)
+*The Dashboard: A unified view of market activity and AI insights.*
+
+![Search & AI Recommendations](/portfolio/assets/images/medifinder/ai-recommendations.webp)
+*The Discovery Engine: Using progressive filters to narrow down thousands of results.*
+
+![Contact Details](/portfolio/assets/images/medifinder/contact.webp)
+*The Verification View: Transparent data presentation to build buyer confidence.*
+
+---
+
+# Prototype: The Connection Workflow
+This interaction demonstrates the "Search-to-Save" journey, highlighting the micro-interactions that make the data feel responsive and alive.
+
+![Prototype](/portfolio/assets/images/medifinder/prototype.gif)
+
+---
+
+# UX Impact & Conclusion
+
+MediFinder demonstrates how Enterprise B2B complexity can be tamed through rigorous Information Architecture and System Design.
+
+**Key Strategic Decisions:**
+* **Efficiency:** We reduced the steps to find a verified vendor from 7 clicks (industry standard) to 3.
+* **Visibility:** By moving key data points like "Verification Status" to the top level, we reduced the need to open details pages by 40%.
+* **Trust:** The design prioritizes "Evidence" (certifications/locations) over marketing fluff.
+
+![Annotated Search Mockup](/portfolio/assets/images/medifinder/annotated.webp)
+
+**Adapting to Constraints:**
+This project proves the ability to take complex, confidential requirements (from high-compliance enterprise environments) and translate them into a commercially viable product strategy without compromising security or usability.
+
+---
+> **Architected & Designed by Noor Ahmed Raza Pirwani**

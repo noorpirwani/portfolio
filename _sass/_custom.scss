@@ -189,7 +189,7 @@ body.is-preload * {
     left: 50%;
     transform: translateX(-50%);
     width: 3px;
-    height: 60px; /* default fallback */
+    height: 200px; /* default fallback */
     background: linear-gradient(180deg, rgba(138, 99, 255, 0.8), #fff);
     border-radius: 3px;
     box-shadow: 0 0 10px rgba(138, 99, 255, 0.8);
@@ -224,6 +224,7 @@ body.is-preload * {
     margin: 0;
   }
 
+  /*
   .details {
     color: #d0d0d0;
     font-size: 0.92rem;
@@ -234,6 +235,20 @@ body.is-preload * {
     transition: max-height 0.5s cubic-bezier(0.23, 1, 0.32, 1),
                 opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1),
                 padding-top 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  }*/
+
+
+  .details {
+    color: #d0d0d0;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    /* REMOVED: opacity: 0; */
+    /* REMOVED: max-height: 0; */
+    opacity: 1; /* Force visible */
+    max-height: none; /* Force full height */
+    padding-top: 1rem; /* Give it some breathing room from the summary */
+    overflow: visible; 
+    /* REMOVED: transition... (no longer needed since it's static) */
   }
 }
 
@@ -1399,17 +1414,33 @@ body:not(.is-preload) #work-section header.major h2::after {
 
 .case-hero {
   position: relative;
+
+  /* Layout */
   width: 100%;
-  height: 70vh;
-  background-size: cover;
-  background-position: top;
+ //max-width: 1200px;      /* controls side space */
+  margin: 0 auto;
+
+  /* First screen logic */
+  height: calc(100vh - 72px); /* header height */
+  max-height: 700px;          /* prevents huge monitors */
+
+  /* Background image */
+  background-size: contain;   /* 👈 IMPORTANT */
+  background-position: center top;
   background-repeat: no-repeat;
-  margin: 0;
-  padding: 0;
+  
+
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
   overflow: hidden;
+
+}
+
+@media (max-width: 768px) {
+  .case-hero {
+    height: calc(100vh - 56px); /* smaller header */
+    max-height: none;
+    border-radius: 14px;
+  }
 }
 
 .case-hero-overlay {
@@ -1424,7 +1455,7 @@ body:not(.is-preload) #work-section header.major h2::after {
   z-index: 2;
   color: #fff;
   padding: 3rem 2rem 1rem;
-  max-width: 900px;
+  max-width: max-content;
 }
 
 .case-title {
@@ -1468,7 +1499,7 @@ body:not(.is-preload) #work-section header.major h2::after {
   color: #fff;
   background: #121830;
   overflow: hidden;
-  padding: 4rem 0;
+  padding: 1rem 0;
 }
 
 /* ✨ Subtle radial gradient background */
@@ -1477,9 +1508,9 @@ body:not(.is-preload) #work-section header.major h2::after {
   position: absolute;
   inset: 0;
   background: radial-gradient(
-    circle at 0% 80%,
+    circle at 0% 90%,
     rgba(138, 99, 255, 0.18) 0%,
-    transparent 70%
+    transparent 15%
   );
   z-index: 0;
   pointer-events: none;
@@ -1871,4 +1902,13 @@ body:not(.is-preload) #work-section header.major h2::after {
     rgba(255,255,255,0.35),
     transparent
   );
+}
+
+/* Find your button class */
+.button.pri {
+    background-color: #ffffff !important;
+    color: #1b1f2b !important; /* Dark text on white button */
+    border: none;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3); /* Add glow */
 }

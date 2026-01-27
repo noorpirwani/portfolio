@@ -39,7 +39,7 @@ document.querySelectorAll("a, button, .interactive").forEach((el) => {
 
 /* ===========================================================
    TIMELINE LINE SYNC — Instant Jump with Card Expansion
-   =========================================================== */
+   =========================================================== 
 
 document.addEventListener("DOMContentLoaded", function () {
   const rows = document.querySelectorAll(".timeline-row");
@@ -84,6 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   });
 });
+
+*/
+
 
 
 /* ===========================================================

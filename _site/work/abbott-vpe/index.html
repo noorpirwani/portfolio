@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Market Access AI – Enterprise | Noor Ahmed Raza Pirwani</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/portfolio/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/portfolio/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/portfolio/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/portfolio/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+  <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+
+<header id="header">
+    <a href="http://localhost:4000/portfolio/" class="logo"><strong>Noor Ahmed Raza Pirwani</strong> <span>Product Designer & UX Specialist</span></a>
+    <nav>
+        <a href="#contact" class="scrolly">Let's Talk</a>
+    </nav>
+</header>
+
+
+
+
+  <!-- Hero Section -->
+   <div class="case-body-wrapper">
+  <section class="case-hero" style="background-image: url('/portfolio/assets/images/abbott/abbott-hero.webp');">
+    <div class="case-hero-overlay"></div></section>
+
+   <!-- <div class="case-hero-content">
+      <h1 class="case-title">Market Access AI – Enterprise</h1>
+
+      
+      <p class="case-subtitle">Internal AI research tool to improve clarity, traceability, and enterprise usability.</p>
+      
+
+      <div class="case-meta">
+        
+        <span class="meta-item"><strong>Year:</strong> 2025</span>
+        
+        
+        <span class="meta-item"><strong>Role:</strong> UX Architect & Researcher</span>
+        
+        
+        <span class="meta-item"><strong>Category:</strong> UX Architecture • Enterprise AI</span>
+        
+      </div>
+
+      
+      <p class="case-description">Redesign of an internal AI tool used by global medical and market access teams. Re-architected a fragmented interface into a transparent split-view research workspace that presents answers, context, and references together—improving evidence traceability, usability, and trust in AI-assisted decision-making across therapeutic areas.</p>
+      
+    </div>-->
+  
+
+  <!-- Case Body (Markdown content) -->
+   
+  <article class="case-body">
+    <!-- This is the START of your case study content.
+Everything below this line will be the body of your page, which is exactly what we want. -->
+
+<h1 id="project-overview">Project Overview</h1>
+<p>Market Access AI is an internal enterprise tool used by global medical and market access teams to generate evidence-based responses using uploaded scientific literature.</p>
+
+<p>The existing interface was functional but difficult to use at scale. This project focused on restructuring the experience to improve clarity, reduce cognitive load, and support confident review of AI-generated answers.</p>
+
+<p><strong>My Role :</strong> UX Architect &amp; UI Designer.<br />
+<strong>Platform:</strong> Internal Enterprise Web Application<br />
+<strong>Focus:</strong> UX Research, Information Architecture, High-Fidelity Prototyping\</p>
+
+<h1 id="the-challenge">The Challenge</h1>
+<p>The original interface attempted to handle multiple tasks within a single dense screen. Answers, references, uploads, and help content competed for attention, making it difficult for users to focus on reviewing and validating AI outputs.</p>
+
+<h3 id="key-challenges-included">Key challenges included:</h3>
+<ul>
+  <li><strong>Lack of Traceability:</strong> Users could not easily verify if the AI answer was correct, leading to low trust in the tool.</li>
+  <li><strong>Fragmented Information:</strong> Critical data was buried across multiple tabs, forcing users to switch contexts constantly.</li>
+  <li><strong>High Visual Density:</strong> Unclear hierarchy made it hard to distinguish between system states (loading, errors, empty results).</li>
+</ul>
+
+<p><img src="/portfolio/assets/images/abbott/previous_ui.webp" alt="Previous UI" /></p>
+
+<h1 id="research--analysis">Research &amp; Analysis</h1>
+<p>A heuristic evaluation and task analysis were conducted to identify usability issues and workflow gaps.</p>
+
+<h3 id="key-findings">Key Findings:</h3>
+<ul>
+  <li>Users needed Answers, Context, and References visible at the same time to validate data.</li>
+  <li>Tabs masked critical information, increasing the time required to verify a claim.</li>
+  <li>The interface lacked clear feedback during loading, uploads, and errors.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">#</th>
+      <th style="text-align: left">Heuristic</th>
+      <th style="text-align: left">Issue</th>
+      <th style="text-align: left">Severity (1–3)</th>
+      <th style="text-align: left">Suggested Fix</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left">Visibility of system status</td>
+      <td style="text-align: left">No clear loading state when AI is generating answers</td>
+      <td style="text-align: left">2</td>
+      <td style="text-align: left">Add inline loader and progress text</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2</td>
+      <td style="text-align: left">Match with real world</td>
+      <td style="text-align: left">Technical terms (Scenario/Tag) may confuse non-technical users</td>
+      <td style="text-align: left">2</td>
+      <td style="text-align: left">Replace with plain labels + tooltips</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">3</td>
+      <td style="text-align: left">Error prevention</td>
+      <td style="text-align: left">Upload accepts any file type, no inline validation</td>
+      <td style="text-align: left">3</td>
+      <td style="text-align: left">Restrict to PDF/PPT/TXT + inline file guidance</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">4</td>
+      <td style="text-align: left">Consistency</td>
+      <td style="text-align: left">Buttons/dropdowns have inconsistent spacing and style</td>
+      <td style="text-align: left">2</td>
+      <td style="text-align: left">Apply unified design system</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">5</td>
+      <td style="text-align: left">Aesthetic &amp; minimalism</td>
+      <td style="text-align: left">Current view is dense and cluttered</td>
+      <td style="text-align: left">2</td>
+      <td style="text-align: left">Introduce whitespace, hierarchy, alignment</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">6</td>
+      <td style="text-align: left">Flexibility &amp; efficiency</td>
+      <td style="text-align: left">Clutter makes it hard to focus</td>
+      <td style="text-align: left">3</td>
+      <td style="text-align: left">Split sections into dedicated screens or clear panels</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">7</td>
+      <td style="text-align: left">Recognition rather than recall</td>
+      <td style="text-align: left">Answer, Context, and References are hidden behind tabs</td>
+      <td style="text-align: left">2</td>
+      <td style="text-align: left">Displayed all three side-by-side to improve readability and citation tracking</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">8</td>
+      <td style="text-align: left">Help &amp; documentation</td>
+      <td style="text-align: left">Getting Started permanently visible clutters the view</td>
+      <td style="text-align: left">2</td>
+      <td style="text-align: left">Replace with contextual help or tutorial button</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">9</td>
+      <td style="text-align: left">Error recovery</td>
+      <td style="text-align: left">Tabs used for unrelated functions (Questions vs Upload)</td>
+      <td style="text-align: left">2</td>
+      <td style="text-align: left">Use multi-screen approach or clear sectioning instead of tabs</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/portfolio/assets/images/abbott/heuristic_evaluation.webp" alt="Heuristic evaluation" /></p>
+
+<h1 id="information-architecture-strategy">Information Architecture Strategy</h1>
+<p>Rather than extending the existing single-screen layout, the experience was restructured around clear task separation.</p>
+
+<h3 id="key-ia-decisions">Key IA decisions:</h3>
+<ul>
+  <li><strong>3-Pane Research Workspace:</strong> Persistent visibility of the Answer (Left), Source Document (Middle), and Citations (Right).</li>
+  <li><strong>Role-Based Navigation:</strong> Distinct views for Admin vs. Standard users to reduce clutter.</li>
+  <li><strong>State Awareness:</strong> Clear empty states and loading indicators to manage user expectations.</li>
+</ul>
+
+<p><img src="/portfolio/assets/images/abbott/user_flows.webp" alt="User Flows" /></p>
+
+<h1 id="the-solution">The Solution</h1>
+<p>A focused, split-view workspace was designed to support reading, verification, and reuse. We moved from structural mid-fidelity wireframes to high-fidelity visual designs to ensure readability in data-heavy environments.</p>
+
+<h3 id="core-improvements">Core Improvements:</h3>
+<ul>
+  <li><strong>Interactive Citations (The “Trust” Feature):</strong> Clicking a reference number <strong>[1]</strong> in the answer auto-scrolls the source PDF to the exact supporting paragraph.</li>
+  <li><strong>Split-View Workspace:</strong> Users can read the AI response and the source document side-by-side without switching tabs.</li>
+  <li><strong>Structured History:</strong> A clear repository of past queries with editing awareness.</li>
+  <li><strong>Admin Clarity:</strong> Separate, dedicated screens for file uploads and tag management.</li>
+</ul>
+
+<p><img src="/portfolio/assets/images/abbott/ai_assistant.webp" alt="AiAssitant" />
+<img src="/portfolio/assets/images/abbott/history_page.webp" alt="History" />
+<img src="/portfolio/assets/images/abbott/file_management.webp" alt="File Management" /></p>
+
+<h1 id="design-principles">Design Principles</h1>
+<p>The redesign followed a set of enterprise-focused UX principles:</p>
+
+<ul>
+  <li><strong>Clarity over Decoration:</strong> High-contrast dark mode to reduce eye strain during long research sessions.</li>
+  <li><strong>One Primary Action:</strong> Clear focus per screen (e.g., “Ask” vs. “Upload”).</li>
+  <li><strong>Persistent Visibility:</strong> Never hide the evidence behind a click.</li>
+</ul>
+
+<h1 id="outcome">Outcome</h1>
+<p>The redesigned experience supports a more confident and efficient workflow for enterprise users.</p>
+
+<ul>
+  <li><strong>100% Traceability:</strong> Users can audit the AI’s work instantly, restoring trust in the tool.</li>
+  <li><strong>Reduced Friction:</strong> Information is easier to scan, and tasks are clearly separated.</li>
+  <li><strong>Scalable Structure:</strong> The interface now behaves as a structured research workspace rather than a dense utility screen.</li>
+</ul>
+
+<h3 id="reflection">Reflection</h3>
+<p>This project reinforced that in enterprise AI products, usability is driven by structure and verification. <strong>Designing for trust</strong> often means simplifying how information is presented, ensuring the user never has to guess where an answer came from.</p>
+
+<hr />
+<blockquote>
+  <p><strong>Architected &amp; Designed by Noor Ahmed Raza Pirwani</strong></p>
+</blockquote>
+
+  </article>
+  </div>
+  </body>
+
+  <!-- Optional Navigation
+  <div class="case-nav">
+    
+    
+    <a href="/portfolio/work/medifinder/" class="case-nav-link next">Next →</a>
+    
+  </div>-->
+
+  <!-- =====================================
+     CONTACT SECTION  
+     ===================================-->
+<section id="contact">
+    <div class="contact-inner">
+        <header class="major split-header">
+            <div class="header-title">
+                <h1>Get in Touch</h1>
+            </div>
+            <div class="header-actions">
+                <span class="button special disabled status-available">
+                    Available for Work
+                </span>
+            </div>
+        </header>
+
+        <div class="contact-grid-top">
+
+            <div class="contact-intro-card">
+                <p>
+                    Have a complex project that needs to move from a simple idea to a real-world solution? This is the
+                    work I do best. Let's connect and build it together.
+                </p>
+            </div>
+
+            <div class="contact-buttons-stack">
+
+                <!-- Email: Solid Purple (Primary) -->
+                <a href="mailto:noorahmedpirwani@gmail.com" class="button special fit">
+                    <span class="icon fa-envelope"></span>
+                    Send me an Email
+                </a>
+
+                <!-- LinkedIn: Solid Accent (Special) -->
+                <a href="https://pk.linkedin.com/in/noor-ahmed-pirwani" class="button special fit" target="_blank">
+                    <span class="icon fa-linkedin"></span>
+                    View my LinkedIn
+                </a>
+
+            <!-- WhatsApp: Default Outline (Button) -->
+            <!-- This Liquid filter strips +, -, (, and ) from your phone number from _config.yml-->
+                <a href="https://wa.me/923212330567"
+                    class="button special fit" target="_blank">
+                    <span class="icon fa-whatsapp"></span>
+                    Chat on WhatsApp
+                </a>
+            </div>
+        </div> <!-- End .contact-grid-top -->
+
+        <h3 class="testimonial-section-header">Testimonials</h3>
+        <div class="testimonial-grid">
+            <!-- Testimonial Card 1 -->
+            <div class="testimonial-card">
+                <blockquote>
+                    "Noor is a thoughtful and purpose-driven designer. His deep understanding of design thinking and his
+                    ‘reason behind the thing’ approach make every solution meaningful. With strong communication and
+                    collaboration skills, he consistently delivers designs that are both creative and impactful."
+                </blockquote>
+                <cite>
+                    Hammad Siddiqi
+                    <span>Software Engineer at XLoop Digital</span>
+                </CITE>
+            </div>
+            <!-- Testimonial Card 2 -->
+            <div class="testimonial-card">
+                <blockquote>
+                    "I had the pleasure of working with Noor on multiple projects. He is a talented UI/UX developer with
+                    a strong eye for design and usability, creating interfaces that are both beautiful and functional.
+                    His positive attitude, clear communication, and dedication make him highly reliable."
+                </blockquote>
+                <cite>
+                    Hunain Parekh
+                    <span>Full-stack Developer at HashOne Global</span>
+                </CITE>
+            </div>
+            <!-- Testimonial Card 3 -->
+            <div class="testimonial-card">
+                <blockquote>
+                    "Noor Ahmed Raza Pirwani is an exceptional designer who blends creativity, technical skill, and
+                    human-centered thinking with ease. His versatility across UX design, research, and digital
+                    fabrication sets him apart. Noor brings depth, innovation, and reliability to every project he takes on."
+                </blockquote>
+                <cite>
+                    Syed Muhammad Saad
+                    <span>Principal Software QA Engineer (Team Lead) at xLoop</span>
+                </CITE>
+            </div>
+        </div>
+
+    </div><!-- End .contact-inner -->
+</section>
+
+
+<!-- Footer -->
+<footer id="footer">
+    <!-- 
+  THIS IS YOUR NEW "SINGLE-LINE" LAYOUT
+  It replaces the old <ul> list structure.
+-->
+    <div class="inner">
+        <div class="footer-inline-wrapper">
+
+            <ul class="icons">
+                
+                
+                <li>
+                    <a href="https://github.com/noorpirwani" class="icon alt fa-github" target="_blank"
+                        rel="noopener noreferrer" aria-label="GitHub">
+                        <span class="label">GitHub</span>
+                    </a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="https://gitlab.fabcloud.org/noorahmedraza.pirwani" class="icon alt fa-gitlab" target="_blank"
+                        rel="noopener noreferrer" aria-label="GitLab">
+                        <span class="label">GitLab</span>
+                    </a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="https://pk.linkedin.com/in/noor-ahmed-pirwani" class="icon alt fa-linkedin" target="_blank"
+                        rel="noopener noreferrer" aria-label="LinkedIn">
+                        <span class="label">LinkedIn</span>
+                    </a>
+                </li>
+                
+                
+            </ul>
+            <ul class="copyright">
+                <li>&copy; <a href="https://noorpirwani.github.io" target="_blank">Noor Ahmed Raza Pirwani</a></li>
+                <li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+                <li>Jekyll integration: <a href="https://github.com/andrewbanchich" target="_blank">Andrew Banchich</a>
+                </li>
+                <li>Customization: <a href="https://github.com/noorpirwani" target="_blank">Noor Ahmed Raza Pirwani</a>
+                </li>
+            </ul>
+
+        </div> <!-- End .footer-inline-wrapper -->
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="http://localhost:4000/portfolio/assets/js/jquery.min.js"></script>
+<script src="http://localhost:4000/portfolio/assets/js/jquery.scrolly.min.js"></script>
+<script src="http://localhost:4000/portfolio/assets/js/jquery.scrollex.min.js"></script>
+<script src="http://localhost:4000/portfolio/assets/js/skel.min.js"></script>
+<script src="http://localhost:4000/portfolio/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="http://localhost:4000/portfolio/assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="http://localhost:4000/portfolio/assets/js/main.js"></script>
+<script src="http://localhost:4000/portfolio/assets/js/experience.js"></script>
+<script src="http://localhost:4000/portfolio/assets/js/custom.js"></script>
+
+
+</body>
+</html>
